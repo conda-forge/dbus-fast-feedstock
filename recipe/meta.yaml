@@ -28,7 +28,6 @@ requirements:
     - pip
   run:
     - python
-    - async-timeout >=3.0.0
 
 test:
   imports:
