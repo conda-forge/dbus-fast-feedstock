@@ -1,5 +1,5 @@
 {% set name = "dbus-fast" %}
-{% set version = "1.90.1" %}
+{% set version = "1.90.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dbus_fast-{{ version }}.tar.gz
-  sha256: eff98b45443681bd8876bbb1444b35112d62e8d12157f004d88ebe5f0481d5b7
+  sha256: 64489f25caa9dc4a93f03c8f3567d00f25306a872c972a261cedd6f79889d721
 
 build:
   script_env:
