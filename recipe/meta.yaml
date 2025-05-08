@@ -13,14 +13,19 @@ build:
   script_env:
     - REQUIRE_CYTHON=1
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   skip: true  # [win]
   missing_dso_whitelist:
     - /lib64/libc.so.6  # [linux]
 
 requirements:
+  build:
+    - {{ compiler("c") }}
+    - {{ stdlib("c") }}
+    - cross-python_{{ target_platform }}    # [build_platform != target_platform]
+    - python                                # [build_platform != target_platform]
+    - cython >=3,<3.1.0                     # [build_platform != target_platform]
   host:
-    - {{ compiler('c') }}
     - python
     - setuptools >=65.4.1
     - cython >=3,<3.1.0
