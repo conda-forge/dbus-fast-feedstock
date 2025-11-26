@@ -1,5 +1,5 @@
 {% set name = "dbus-fast" %}
-{% set version = "2.46.0" %}
+{% set version = "3.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dbus_fast-{{ version }}.tar.gz
-  sha256: 87b839a99ce9b0e14a5d8e096380b348e22b860076202f39d14493e501d4903b
+  sha256: 6c9e1b45e4b5e7df0c021bf1bf3f27649374e47c3de1afdba6d00a7d7bba4b3a
 
 build:
   script_env:
     - REQUIRE_CYTHON=1
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
   skip: true  # [win]
   missing_dso_whitelist:
     - /lib64/libc.so.6  # [linux]
