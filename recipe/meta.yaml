@@ -14,7 +14,7 @@ build:
     - REQUIRE_CYTHON=1
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  skip: true  # [win]
+  skip: true  # [win or py<310]
   missing_dso_whitelist:
     - /lib64/libc.so.6  # [linux]
 
