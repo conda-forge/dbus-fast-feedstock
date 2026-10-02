@@ -1,5 +1,5 @@
 {% set name = "dbus-fast" %}
-{% set version = "5.0.22" %}
+{% set version = "5.0.26" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/dbus_fast-{{ version }}.tar.gz
-  sha256: 34dc67d7d21a12399828dd13e63b352750580beea54ea7c729e708f2d2905fef
+  sha256: 11b3d057bb0083b82e41e09db63c90c9d281ad556f75a014b0a6484130a2c596
 
 build:
   script_env:
     - REQUIRE_CYTHON=1
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
   skip: true  # [win or py<310]
   missing_dso_whitelist:
     - /lib64/libc.so.6  # [linux]
