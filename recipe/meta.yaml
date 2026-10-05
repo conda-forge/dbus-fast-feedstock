@@ -24,11 +24,11 @@ requirements:
     - {{ stdlib("c") }}
     - cross-python_{{ target_platform }}    # [build_platform != target_platform]
     - python                                # [build_platform != target_platform]
-    - cython >=3,<3.1.0                     # [build_platform != target_platform]
+    - cython >=3,<3.4                     # [build_platform != target_platform]
   host:
     - python
     - setuptools >=65.4.1
-    - cython >=3,<3.1.0
+    - cython >=3,<3.4
     - poetry-core >=1.0.0
     - pip
   run:
